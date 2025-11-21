@@ -122,7 +122,10 @@ function renderEncounter(encounter) {
     elements.dialogueBox.textContent = encounter.text;
     elements.actionArea.innerHTML = '';
     
-    encounter.options.forEach(opt => {
+    // Shuffle options
+    const shuffledOptions = [...encounter.options].sort(() => Math.random() - 0.5);
+    
+    shuffledOptions.forEach(opt => {
         const btn = createButton(opt.text, () => handleChoice(opt, encounter));
         elements.actionArea.appendChild(btn);
     });
