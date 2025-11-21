@@ -123,12 +123,20 @@ function renderEncounter(encounter) {
     elements.actionArea.innerHTML = '';
     
     // Shuffle options
-    const shuffledOptions = [...encounter.options].sort(() => Math.random() - 0.5);
+    const shuffledOptions = shuffleArray([...encounter.options]);
     
     shuffledOptions.forEach(opt => {
         const btn = createButton(opt.text, () => handleChoice(opt, encounter));
         elements.actionArea.appendChild(btn);
     });
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
 function handleChoice(option, encounter) {
