@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Engineer Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <div id="ui-header">
+            <span id="player-role">Role: Intern</span>
+            <span id="company">BMC Helix</span>
+            <span id="score">XP: 0</span>
+        </div>
+        <div id="screen">
+            <div id="main-menu">
+                <h1>Solution Engineer Simulator</h1>
+                <p class="blink">PRESS START</p>
+                <button id="start-btn">START GAME</button>
+            </div>
+            <div id="game-play" style="display:none;">
+                <div id="dialogue-box"></div>
+                <div id="action-area"></div>
+            </div>
+        </div>
+        <div id="ui-footer">
+            <div id="message-log">Welcome to BMC Helix!</div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
